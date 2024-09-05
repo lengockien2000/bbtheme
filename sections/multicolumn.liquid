@@ -13,6 +13,22 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  /* .multicolumn .grid {
+    column-gap: {{ section.settings.horizontal_spacing }}px;
+    row-gap: {{ section.settings.horizontal_spacing }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .grid {
+      column-gap: calc({{ section.settings.horizontal_spacing }} / 2)px;
+      row-gap: calc({{ section.settings.horizontal_spacing }} / 2)px;
+    }
+  } */
+
+  :root {
+    --grid-desktop-multicolumn-spacing: {{ section.settings.spacing }}px;
+    --grid-mobile-multicolumn-spacing: {{ section.settings.spacing | divided_by: 2 }}px;
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -24,12 +40,7 @@
 -%}
 
 <div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
-  <div
-    class="{% if section.settings.content_width == false%}page-width{% endif %} section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    {% if settings.animations_reveal_on_scroll %}
-      data-cascade
-    {% endif %}
-  >
+  <div class="{% if section.settings.content_width == false%}page-width{% endif %} section-{{ section.id }}-padding isolate">
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
         <h2 class="title inline-richtext {{ section.settings.heading_size }}">
@@ -68,12 +79,8 @@
 
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}"
             {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
           >
             <div class="multicolumn-card content-container">
               {%- if block.settings.image != blank -%}
@@ -90,9 +97,9 @@
                     {%- liquid
                       assign number_of_columns = section.settings.columns_desktop
                       assign number_of_columns_mobile = section.settings.columns_mobile
-                      assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
-                      assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
-                      assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                      assign grid_space_desktop = number_of_columns | minus: 1 | times: section.settings.spacing | plus: 100 | append: 'px'
+                      assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: section.settings.spacing | plus: 100 | append: 'px'
+                      assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: section.settings.spacing | divided_by: 2 | plus: 30 | append: 'px'
                       if section.settings.image_width == 'half'
                         assign image_width = 0.5
                       elsif section.settings.image_width == 'third'
@@ -364,6 +371,16 @@
       "id": "swipe_on_mobile",
       "default": false,
       "label": "t:sections.multicolumn.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Column spacing",
+      "default": 0
     },
     {
       "type": "header",

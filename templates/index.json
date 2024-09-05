@@ -150,8 +150,8 @@
           "type": "testimonial",
           "settings": {
             "quote": "Not only about the design but the quality. Never Have I ever found such an awesome case",
-            "name": "Rhona Bowers",
             "image": "shopify:\/\/shop_images\/ava1.png",
+            "name": "Rhona Bowers",
             "color_scheme": "scheme-4"
           }
         },
@@ -159,8 +159,8 @@
           "type": "testimonial",
           "settings": {
             "quote": "Not only about the design but the quality. Never Have I ever found such an awesome case",
-            "name": "Rhona Bowers",
             "image": "shopify:\/\/shop_images\/ava2.png",
+            "name": "Rhona Bowers Jrs.",
             "color_scheme": "scheme-4"
           }
         }
@@ -197,8 +197,7 @@
         },
         "email_form_hNmhBg": {
           "type": "email_form",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -211,6 +210,30 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "social_fatgdK": {
+      "type": "social",
+      "blocks": {
+        "links_XKmkJX": {
+          "type": "links",
+          "settings": {
+            "icon": true,
+            "link_type": "instagram",
+            "content": "Follow Us on Instagram @Casén",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "links_XKmkJX"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "color_scheme": "",
+        "show_line_separator": true,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "multicolumn_section": {
@@ -311,6 +334,7 @@
     "featured_collection",
     "testimonial_test",
     "newsletter_section",
+    "social_fatgdK",
     "multicolumn_section"
   ]
 }

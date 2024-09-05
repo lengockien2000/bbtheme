@@ -78,7 +78,7 @@
           aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         >
           <div class="testimonial-content">
-            <p class="quote">{{ block.settings.quote }}</p>
+            <p class="quote {{ block.settings.text_style }}">{{ block.settings.quote }}</p>
             <div class="testimonial-person">
               {% if block.settings.image %}
                 {{
@@ -245,6 +245,26 @@
           "type": "inline_richtext",
           "label": "Testimonial Quote",
           "default": "Not only about the design but the quality. Never Have I ever found such an awesome case"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Body"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "Uppercase"
+            }
+          ],
+          "default": "body",
+          "label": "Text style"
         },
         {
           "id": "image",

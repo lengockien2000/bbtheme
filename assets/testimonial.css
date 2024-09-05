@@ -1,7 +1,7 @@
 .testimonial-slider {
-  text-align: center;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 .slider-container {
@@ -10,39 +10,34 @@
   width: 100%;
 }
 
-.slide {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-
 .testimonial-content {
-  max-width: 90%;
   margin: 0 auto;
+  max-width: 90%;
 }
 
 .quote {
-  font-size: 20px;
   margin-bottom: 20px;
   color: #fff;
+  font-size: 20px;
 }
 
 .testimonial-person {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .testimonial-person img {
+  margin-bottom: 10px;
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  margin-bottom: 10px;
 }
 
 .name {
-  font-weight: bold;
   color: #fff;
+  font-weight: bold;
 }
 
 .slide-btn .icon {
@@ -51,16 +46,16 @@
 
 .prev-btn,
 .next-btn {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  font-size: 30px;
-  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0 15px;
   z-index: 1000;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0 15px;
+  color: #FFFFFF;
+  font-size: 30px;
 
   /* .slider-button {
     color: rgba(var(--color-foreground),.75);
@@ -77,10 +72,12 @@
 
 .prev-btn {
   left: 10px;
+  transform: rotate(90deg);
 }
 
 .next-btn {
   right: 10px;
+  transform: rotate(-90deg);
 }
 
 .prev-btn:hover,
@@ -113,4 +110,21 @@
   .quote {
     font-size: 16px;
   }
+}
+
+.slider-counter__link--active.slider-counter__link--dots .dot {
+  background-color: rgb(var(--color-foreground));
+}
+
+.slider-counter__link--dots .dot {
+  transition: transform .2s ease-in-out;
+}
+
+.slider-counter__link--dots .dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: .1rem solid rgba(var(--color-foreground), .5);
+  padding: 0;
+  display: block;
 }

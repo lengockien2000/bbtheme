@@ -1,18 +1,14 @@
-{%- if section.settings.show_announcement -%}
-  <div
-    class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} utility-bar--bottom-border{% endif %}"
-  >
-    <div class="page-width utility-bar__grid">
-      <div class="announcement-bar" role="region" aria-label="Announcement">
-        {%- if section.settings.text != blank -%}
-          <p class="announcement-bar__message h5">
-            <span>{{ section.settings.text | escape }}</span>
-          </p>
-        {%- endif -%}
-      </div>
+<div class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} utility-bar--bottom-border{% endif %}">
+  <div class="page-width utility-bar__grid">
+    <div class="announcement-bar" role="region" aria-label="Announcement">
+      {%- if section.settings.text != blank -%}
+        <p class="announcement-bar__message h5">
+          <span>{{ section.settings.text | escape }}</span>
+        </p>
+      {%- endif -%}
     </div>
   </div>
-{%- endif -%}
+</div>
 
 {% schema %}
 {
@@ -27,12 +23,6 @@
       "id": "color_scheme",
       "label": "Color Scheme",
       "default": "scheme-1"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_announcement",
-      "label": "Show announcement",
-      "default": true
     },
     {
       "type": "checkbox",

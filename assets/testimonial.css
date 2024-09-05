@@ -1,0 +1,116 @@
+.testimonial-slider {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.testimonial-content {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.quote {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.testimonial-person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.testimonial-person img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: bold;
+  color: #fff;
+}
+
+.slide-btn .icon {
+  height: .6rem;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 15px;
+  z-index: 1000;
+
+  /* .slider-button {
+    color: rgba(var(--color-foreground),.75);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .testimonial-content {
+    max-width: 100%;
+    font-size: 18px;
+  }
+
+  .quote {
+    font-size: 18px;
+  }
+
+  .prev-btn,
+  .next-btn {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-person img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .quote {
+    font-size: 16px;
+  }
+}

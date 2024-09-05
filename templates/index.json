@@ -21,11 +21,12 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": false,
+            "button_background_opacity": 100
           }
         }
       },
@@ -48,17 +49,17 @@
     },
     "rich_text": {
       "type": "rich-text",
-      "block_order": [
-        "text"
-      ],
       "blocks": {
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Write something here<p>",
+            "text": "<p>Write something here<p>"
           }
         }
       },
+      "block_order": [
+        "text"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -66,7 +67,7 @@
         "full_width": true,
         "padding_top": 20,
         "padding_bottom": 20
-      },
+      }
     },
     "image_with_text": {
       "type": "image-with-text",
@@ -109,7 +110,6 @@
         "content_layout": "no-overlap",
         "section_color_scheme": "scheme-1",
         "color_scheme": "scheme-1",
-        "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 20,
         "padding_bottom": 36
@@ -118,7 +118,7 @@
     "featured_collection": {
       "type": "collection",
       "settings": {
-        "title": "<b>Featured products</b>",
+        "title": "<b>Featured products<\/b>",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -141,6 +141,73 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "testimonial_test": {
+      "type": "testimonial",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {}
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {}
+        }
+      },
+      "settings": {}
+    },
+    "slider_FLkKf6": {
+      "type": "slider",
+      "blocks": {
+        "slide_P7J7PX": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_fURkmC": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_P7J7PX",
+        "slide_fURkmC"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "newsletter_section": {
@@ -250,6 +317,7 @@
       ],
       "settings": {
         "title": "",
+        "content_width": false,
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "square",
@@ -271,6 +339,8 @@
     "rich_text",
     "image_with_text",
     "featured_collection",
+    "testimonial_test",
+    "slider_FLkKf6",
     "newsletter_section",
     "multicolumn_section"
   ]

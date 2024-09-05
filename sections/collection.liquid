@@ -87,6 +87,7 @@
             aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
           >
             {{ 'sections.featured_collection.view_all' | t }}
+            {% render 'icon-arrow' %}
           </a>
         </div>
       {%- endif -%}
@@ -188,7 +189,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.featured-collection.name",
+  "name": "Collection",
   "tag": "section",
   "class": "section",
   "disabled_on": {

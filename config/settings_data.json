@@ -6,7 +6,8 @@
     "type_body_font": "assistant_n4",
     "body_scale": 100,
     "page_width": 1200,
-    "spacing_grid_horizontal": 0,
+    "spacing_grid_horizontal": 20,
+    "spacing_grid_vertical": 20,
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
@@ -44,7 +45,9 @@
     "collection_card_shadow_horizontal_offset": 0,
     "collection_card_shadow_vertical_offset": 4,
     "collection_card_shadow_blur": 5,
-    "content_for_index": [],
+    "content_for_index": [
+
+    ],
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -70,13 +73,13 @@
       },
       "scheme-3": {
         "settings": {
-          "background": "#242833",
+          "background": "#1c1c1e",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
-          "button_label": "#000000",
+          "button_label": "#1c1c1e",
           "secondary_button_label": "#ffffff",
-          "shadow": "#121212"
+          "shadow": "#1c1c1e"
         }
       },
       "scheme-4": {
@@ -92,13 +95,13 @@
       },
       "scheme-5": {
         "settings": {
-          "background": "#F7F7F7",
+          "background": "#f7f7f7",
           "background_gradient": "",
-          "text": "#1C1C1E",
-          "button": "#1C1C1E",
-          "button_label": "#1C1C1E",
-          "secondary_button_label": "#F7F7F7",
-          "shadow": "#1C1C1E"
+          "text": "#1c1c1e",
+          "button": "#f7f7f7",
+          "button_label": "#1c1c1e",
+          "secondary_button_label": "#1c1c1e",
+          "shadow": "rgba(0,0,0,0)"
         }
       }
     }

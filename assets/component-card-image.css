@@ -1,0 +1,12 @@
+.card__title {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__title .card__heading {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+}

@@ -20,9 +20,9 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "SHOP NOW",
             "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false,
@@ -36,11 +36,12 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/banner.png",
         "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "image_height": "medium",
+        "desktop_content_position": "bottom-left",
         "show_text_box": false,
-        "desktop_content_alignment": "center",
+        "desktop_content_alignment": "left",
         "color_scheme": "scheme-3",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
@@ -53,7 +54,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Write something here<p>"
+            "text": "<p>Write something here<\/p><p><\/p>"
           }
         }
       },
@@ -65,8 +66,8 @@
         "content_alignment": "center",
         "color_scheme": "scheme-3",
         "full_width": true,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 8,
+        "padding_bottom": 8
       }
     },
     "image_with_text": {
@@ -75,7 +76,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "OUR JOURNEY",
+            "heading": "<strong>OUR JOURNEY<\/strong>",
             "heading_size": "h1"
           }
         },
@@ -83,7 +84,7 @@
           "type": "text",
           "settings": {
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
+            "text_style": "subtitle"
           }
         },
         "caption": {
@@ -91,7 +92,7 @@
           "settings": {
             "caption": "--Since 2014",
             "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
+            "text_size": "large"
           }
         }
       },
@@ -101,8 +102,9 @@
         "caption"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/5c7081cf935c33b32283ad406fcdc8c3.png",
         "position_alignment": "vertical",
-        "height": "adapt",
+        "height": "medium",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "desktop_content_position": "top",
@@ -118,7 +120,7 @@
     "featured_collection": {
       "type": "collection",
       "settings": {
-        "title": "<b>Featured products<\/b>",
+        "title": "<strong>Featured products<\/strong>",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -143,6 +145,35 @@
         "padding_bottom": 36
       }
     },
+    "featured_collection_mcRLXn": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>FEATURED PRODUCT<\/strong>",
+        "title_position": "image",
+        "color_title_image": "#ffffff",
+        "size_title_image": 30,
+        "image": "shopify:\/\/shop_images\/834c9dabc25550b251a406b1c650ebe1.png",
+        "heading_size": "h1",
+        "collection": "all",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-5",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "testimonial_test": {
       "type": "testimonial",
       "blocks": {
@@ -150,6 +181,7 @@
           "type": "testimonial",
           "settings": {
             "quote": "Not only about the design but the quality. Never Have I ever found such an awesome case",
+            "text_style": "body",
             "image": "shopify:\/\/shop_images\/ava1.png",
             "name": "Rhona Bowers",
             "color_scheme": "scheme-4"
@@ -159,6 +191,7 @@
           "type": "testimonial",
           "settings": {
             "quote": "Not only about the design but the quality. Never Have I ever found such an awesome case",
+            "text_style": "body",
             "image": "shopify:\/\/shop_images\/ava2.png",
             "name": "Rhona Bowers Jrs.",
             "color_scheme": "scheme-4"
@@ -206,7 +239,7 @@
         "email_form_hNmhBg"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-5",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
@@ -322,6 +355,7 @@
         "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
+        "spacing": 0,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -332,6 +366,7 @@
     "rich_text",
     "image_with_text",
     "featured_collection",
+    "featured_collection_mcRLXn",
     "testimonial_test",
     "newsletter_section",
     "social_fatgdK",

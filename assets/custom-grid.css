@@ -1,0 +1,32 @@
+.custom__grid {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 2rem
+}
+
+.custom__grid .col {
+  width: 50%;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.custom__grid .image-with-text__heading {
+  margin-top: 0;
+}
+
+.custom__grid .image-with-text__text--caption {
+  font-weight: bold;
+}
+
+.custom__grid .image-with-text__text--caption:before {
+  content: '';
+  display: inline-block;
+  width: 2.7rem;
+  height: 0.2rem;
+  background-color: rgb(var(--color-foreground));
+  margin-right: 0.2rem;
+  margin-bottom: 0.3rem;
+}

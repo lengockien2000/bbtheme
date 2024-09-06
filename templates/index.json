@@ -70,6 +70,53 @@
         "padding_bottom": 8
       }
     },
+    "image_with_text_custom_phceVp": {
+      "type": "image-with-text-custom",
+      "blocks": {
+        "heading_K8JzqQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>OUR JOURNEY<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_JPGUc7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Casén, a dedication to transforming self-identity into a customized artistic outlet, refines the art of custom leather products through world-class fabrics and design to produce inspiring statement objects.<\/p>",
+            "text_style": "subtitle"
+          }
+        },
+        "caption_Vcdgiz": {
+          "type": "caption",
+          "settings": {
+            "caption": "SINCE 2014",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        }
+      },
+      "block_order": [
+        "heading_K8JzqQ",
+        "text_JPGUc7",
+        "caption_Vcdgiz"
+      ],
+      "settings": {
+        "position_alignment": "vertical",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "custom_grid": "two-column",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_with_text": {
       "type": "image-with-text",
       "blocks": {
@@ -230,7 +277,8 @@
         },
         "email_form_hNmhBg": {
           "type": "email_form",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -364,6 +412,7 @@
   "order": [
     "image_banner",
     "rich_text",
+    "image_with_text_custom_phceVp",
     "image_with_text",
     "featured_collection",
     "featured_collection_mcRLXn",

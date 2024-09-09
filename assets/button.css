@@ -149,3 +149,12 @@
   transform: translate(-50%, -50%);
   height: 100%;
 }
+
+.banner__buttons .button:not([disabled]):hover {
+  background-color: rgb(var(--color-button-text), var(--alpha-button-background));
+  color: rgb(var(--color-button));
+}
+
+.banner__buttons .button.button:not([disabled]):after {
+  box-shadow: none;
+}

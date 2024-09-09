@@ -259,7 +259,7 @@
                     type="button"
                     aria-label="{{ 'accessibility.close' | t }}"
                   >
-                    {%- render 'icon-close' -%}
+                    {{- 'icon-close.svg' | inline_asset_content -}}
                   </button>
                   {%- if card_product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
                     <volume-pricing class="parent-display">
@@ -331,7 +331,7 @@
                     class="quick-add-modal__toggle"
                     aria-label="{{ 'accessibility.close' | t }}"
                   >
-                    {% render 'icon-close' %}
+                    {{- 'icon-close.svg' | inline_asset_content -}}
                   </button>
                   <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div>
                 </div>
@@ -456,7 +456,7 @@
                     class="quick-add-modal__toggle"
                     aria-label="{{ 'accessibility.close' | t }}"
                   >
-                    {% render 'icon-close' %}
+                    {{- 'icon-close.svg' | inline_asset_content -}}
                   </button>
                   <div
                     id="QuickAddInfo-{{ card_product.id }}"
@@ -503,7 +503,7 @@
                           class="link product__view-details animate-arrow small-hide medium-hide"
                         >
                           {{ 'products.product.view_full_details' | t -}}
-                          {% render 'icon-arrow' %}
+                          {{- 'icon-arrow.svg' | inline_asset_content -}}
                         </a>
                       </div>
                       <div class="quick-add-modal__content-info--bulk-details large-up-hide">

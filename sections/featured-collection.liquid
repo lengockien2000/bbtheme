@@ -139,7 +139,7 @@
             aria-label="{{ 'general.slider.previous_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
-            {% render 'icon-caret' %}
+            {{- 'icon-caret.svg' | inline_asset_content -}}
           </button>
           <div class="slider-counter caption">
             <span class="slider-counter--current">1</span>
@@ -154,7 +154,7 @@
             aria-label="{{ 'general.slider.next_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
-            {% render 'icon-caret' %}
+            {{- 'icon-caret.svg' | inline_asset_content -}}
           </button>
         </div>
       {%- endif -%}
@@ -168,7 +168,7 @@
           aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
         >
           {{ 'sections.featured_collection.view_all' | t }}
-          {% render 'icon-arrow' %}
+          {{- 'icon-arrow.svg' | inline_asset_content -}}
         </a>
       </div>
     {%- endif -%}

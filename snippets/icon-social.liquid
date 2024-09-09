@@ -1,7 +1,7 @@
 {%- if variable == 'instagram' -%}
-  {% render 'instagram' %}
+  {{- 'icon-instagram.svg' | inline_asset_content -}}
 {%- elsif variable == 'facebook' -%}
-  {% render 'facebook' %}
+  {{- 'icon-facebook.svg' | inline_asset_content -}}
 {%- elsif variable == 'youtube' -%}
-  {% render 'youtube' %}
+  {{- 'icon-youtube.svg' | inline_asset_content -}}
 {%- endif -%}

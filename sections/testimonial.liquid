@@ -117,7 +117,7 @@
         aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
         aria-controls="Slider-{{ section.id }}"
       >
-        {% render 'icon-caret' %}
+        {{- 'icon-caret.svg' | inline_asset_content -}}
       </button>
       <button
         type="button"
@@ -126,7 +126,7 @@
         aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
         aria-controls="Slider-{{ section.id }}"
       >
-        {% render 'icon-caret' %}
+        {{- 'icon-caret.svg' | inline_asset_content -}}
       </button>
     {%- endif -%}
   </slideshow-component>

@@ -27,6 +27,10 @@
   z-index: 0;
 }
 
+.newsletter-form__field-wrapper .field:after {
+  display: none;
+}
+
 .newsletter-form__message {
   justify-content: center;
   margin-bottom: 0;
@@ -43,12 +47,20 @@
 }
 
 .newsletter-form__button {
-  width: 4.4rem;
+  width: unset;
   margin: 0;
   right: var(--inputs-border-width);
   top: 0;
   height: 100%;
   z-index: 2;
+  padding: 0 2rem;
+  background-color: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+.newsletter-form__button:hover {
+  background-color: rgb(var(--color-button-text));
+  color: rgb(var(--color-button));
 }
 
 .newsletter-form__button:focus-visible {
@@ -61,10 +73,10 @@
   background-color: rgb(var(--color-background));
 }
 
-.newsletter-form__button:not(:focus-visible):not(.focused) {
+/* .newsletter-form__button:not(:focus-visible):not(.focused) {
   box-shadow: inherit;
   background-color: inherit;
-}
+} */
 
 .newsletter-form__button .icon {
   width: 1.5rem;

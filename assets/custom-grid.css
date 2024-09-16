@@ -1,12 +1,13 @@
 .custom__grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   gap: 2rem
 }
 
 .custom__grid .col {
-  width: 50%;
+  width: 100%;
+  flex-direction: column;
   margin-top: 0;
   display: flex;
   flex-direction: column;
@@ -29,4 +30,14 @@
   background-color: rgb(var(--color-foreground));
   margin-right: 0.2rem;
   margin-bottom: 0.3rem;
+}
+
+@media (min-width: 769px) {
+  .custom__grid {
+    flex-direction: row;
+  }
+
+  .custom__grid .col {
+    width: 50%;
+  }
 }

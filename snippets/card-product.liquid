@@ -72,12 +72,14 @@
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt="{{ card_product.featured_media.alt | escape }}"
-                class="motion-reduce"
+                class="motion-reduce product-featured-image"
                 {% unless lazy_load == false %}
                   loading="lazy"
                 {% endunless %}
                 width="{{ card_product.featured_media.width }}"
                 height="{{ card_product.featured_media.height }}"
+                id="product-feature-img"
+
               >
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
@@ -287,10 +289,25 @@
               {% endif %}
             {%- endif -%}
           </div>
+          <image-changer data-variant-select="#variant-select" data-image-target="#product-preview" data-default-image="{{ card_product.featured_image | image_url: 'large' }}">
+            <select id="variant-select" class="variant-select">
+              {% for variant in card_product.variants %}
+                {% if variant.image %}
+                  <option value="{{ variant.image | image_url: width: 533 }}">
+                    {{ variant.title }}
+                  </option>
+                {% else %}
+                  <option value="{{ card_product.featured_image | image_url: width: 533 }}">
+                    {{ variant.title }} (No image, showing default)
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </image-changer>
         </div>
         {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
         {% if quick_add == 'standard' %}
-          <div class="quick-add no-js-hidden">
+          <div class="quick-add no-js-hidden quick-add-featured">
             {%- liquid
               assign qty_rules = false
               if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1

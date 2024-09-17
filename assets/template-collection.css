@@ -142,3 +142,10 @@
 .quick-add.quick-add-featured {
   margin-bottom: 0;
 }
+
+.variant-select {
+  height: 50px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 15px;
+}

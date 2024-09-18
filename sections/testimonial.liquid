@@ -17,6 +17,10 @@
     padding-bottom: calc({{ section.settings.padding_bottom }}px  * 0.75);
   }
 
+  #Banner-{{ section.id }} .banner__media::after {
+    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -25,7 +29,7 @@
   }
 {%- endstyle -%}
 
-<div class="testimonial-slider section-{{ section.id }}-padding">
+<div id="Banner-{{ section.id }}" class="testimonial-slider section-{{ section.id }}-padding">
   <div class="banner__media media{% if section.settings.image == blank %} placeholder{% endif %}">
     {%- if section.settings.image -%}
       {%- liquid
@@ -51,10 +55,7 @@
       {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
     {%- endif -%}
   </div>
-  <slideshow-component
-    class="banner__content color-{{ section.settings.color_scheme }}"
-    style="flex-direction: column"
-  >
+  <slideshow-component class="banner__content color-{{ section.settings.color_scheme }} testimonial-wrapper">
     {%- if section.settings.heading != blank -%}
       <h2 class="inline-richtext {{ section.settings.heading_size }} testimonial-heading">
         {{ section.settings.heading }}
@@ -78,7 +79,7 @@
           aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         >
           <div class="testimonial-content">
-            <p class="quote {{ block.settings.text_style }}">{{ block.settings.quote }}</p>
+            <p class="quote">{{ block.settings.quote }}</p>
             <div class="testimonial-person">
               {% if block.settings.image %}
                 {{
@@ -211,6 +212,16 @@
       "label": "Background image"
     },
     {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Image overlay opacity",
+      "default": 0
+    },
+    {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
@@ -245,26 +256,6 @@
           "type": "inline_richtext",
           "label": "Testimonial Quote",
           "default": "Not only about the design but the quality. Never Have I ever found such an awesome case"
-        },
-        {
-          "type": "select",
-          "id": "text_style",
-          "options": [
-            {
-              "value": "body",
-              "label": "Body"
-            },
-            {
-              "value": "subtitle",
-              "label": "Subtitle"
-            },
-            {
-              "value": "caption-with-letter-spacing",
-              "label": "Uppercase"
-            }
-          ],
-          "default": "body",
-          "label": "Text style"
         },
         {
           "id": "image",

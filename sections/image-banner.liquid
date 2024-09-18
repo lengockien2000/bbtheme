@@ -24,7 +24,7 @@
 {%- endif -%}
 
 {%- style -%}
-  #Banner-{{ section.id }}::after {
+  #Banner-{{ section.id }} .banner__media::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
 {%- endstyle -%}
@@ -104,7 +104,7 @@
       }}
     </div>
   {%- endif -%}
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
+  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} banner__content--{{ section.settings.mobile_content_position }}-m page-width">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -289,6 +289,50 @@
     {
       "type": "header",
       "content": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_position",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top Left"
+        },
+        {
+          "value": "top-center",
+          "label": "Top Center"
+        },
+        {
+          "value": "top-right",
+          "label": "Top Right"
+        },
+        {
+          "value": "middle-left",
+          "label": "Middle Left"
+        },
+        {
+          "value": "middle-center",
+          "label": "Middle Center"
+        },
+        {
+          "value": "middle-right",
+          "label": "Middle Right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "middle-center",
+      "label": "Desktop content position"
     },
     {
       "type": "select",

@@ -347,7 +347,7 @@
 }
 
 .card__heading a::after {
-  bottom: 125px;
+  /* bottom: 125px; */
   content: '';
   left: 0;
   position: absolute;

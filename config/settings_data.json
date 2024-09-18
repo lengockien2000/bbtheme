@@ -1,9 +1,9 @@
 {
   "current": {
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "archivo_n7",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "archivo_n4",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_grid_horizontal": 20,
@@ -102,6 +102,17 @@
           "button_label": "#1c1c1e",
           "secondary_button_label": "#1c1c1e",
           "shadow": "rgba(0,0,0,0)"
+        }
+      },
+      "scheme-9e659563-cd38-4416-8c30-6a61e494cecc": {
+        "settings": {
+          "background": "#f7f7f7",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
         }
       }
     }

@@ -146,6 +146,23 @@
 .variant-select {
   height: 50px;
   width: 100%;
-  padding: 5px;
-  margin-top: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+select.variant-select {
+  /* appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; */
+  padding: 10px 40px 10px 10px; /* Adjust padding for space */
+}
+
+.no-variant {
+  margin-top: 0;
+  opacity: 0.5;
 }

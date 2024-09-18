@@ -50,6 +50,7 @@
         {% if horizontal_class %} card--horizontal{% endif %}
       "
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+      id="product-card-{{ card_product.id }}"
     >
       <div
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
@@ -78,8 +79,7 @@
                 {% endunless %}
                 width="{{ card_product.featured_media.width }}"
                 height="{{ card_product.featured_media.height }}"
-                id="product-feature-img"
-
+                id="product-image-{{ card_product.id }}"
               >
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
@@ -289,21 +289,6 @@
               {% endif %}
             {%- endif -%}
           </div>
-          <image-changer data-variant-select="#variant-select" data-image-target="#product-preview" data-default-image="{{ card_product.featured_image | image_url: 'large' }}">
-            <select id="variant-select" class="variant-select">
-              {% for variant in card_product.variants %}
-                {% if variant.image %}
-                  <option value="{{ variant.image | image_url: width: 533 }}">
-                    {{ variant.title }}
-                  </option>
-                {% else %}
-                  <option value="{{ card_product.featured_image | image_url: width: 533 }}">
-                    {{ variant.title }}
-                  </option>
-                {% endif %}
-              {% endfor %}
-            </select>
-          </image-changer>
         </div>
         {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
         {% if quick_add == 'standard' %}
@@ -560,26 +545,36 @@
               </modal-dialog>
             </div>
           {% endif %}
+        {% elsif quick_add == 'fast' %}
+          <quick-add-fast class="quick-add no-js-hidden" data-product-id="{{ card_product.id }}">
+            {% if card_product.has_only_default_variant %}
+              <p class="no-variant variant-select">NO VARIANT</p>
+            {% else %}
+              <select id="variant-select-{{ card_product.id }}" class="js-variant-select variant-select">
+                {% for variant in card_product.variants %}
+                  <option
+                    value="{{ variant.id }}"
+                    data-image-src="{{ variant.featured_image | image_url: width: 533 }}"
+                    data-image-srcset="{{ variant.featured_image | image_url: width: 533 }}"
+                    {% if variant.available == false %}
+                      disabled
+                    {% endif %}
+                  >
+                    {{ variant.title }}
+                    {% if variant.available == false %} (Sold out) {% endif %}
+                  </option>
+                {% endfor %}
+              </select>
+            {% endif %}
+            <button
+              class="js-add-to-cart-custom quick-add-submit button button--full-width button--secondary"
+              data-product-id="{{ card_product.id }}"
+            >
+              ADD TO CART
+            </button>
+            <p class="js-cart-feedback" style="display: none; color: green;"></p>
+          </quick-add-fast>
         {% endif %}
-        {% comment %}
-          <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
-              <span
-                id="Badge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
-              >
-                {{- 'products.product.sold_out' | t -}}
-              </span>
-            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-              <span
-                id="Badge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-              >
-                {{- 'products.product.on_sale' | t -}}
-              </span>
-            {%- endif -%}
-          </div>
-        {% endcomment %}
       </div>
     </div>
   </div>

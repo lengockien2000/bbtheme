@@ -1,10 +1,4 @@
 {{ 'component-card-image.css' | asset_url | stylesheet_tag }}
-{% style %}
-  .card__title .card__heading {
-    color: {{ color_title }};
-    font-size: {{ size_title }}px;
-  }
-{% endstyle %}
 
 <div class="card-wrapper product-card-wrapper underline-links-hover">
   <div class="card card--{{ settings.card_style }} card--media {% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}{% if extend_height %} card--extend-height{% endif %}{% if settings.card_style == 'card' %} ratio{% endif %}{% if horizontal_class %} card--horizontal{% endif %}">
@@ -36,7 +30,7 @@
     {%- endif -%}
     {%- if show_title_image == 'image' -%}
       <div class="card__title">
-        <h3 class="card__heading">
+        <h3 class="card__heading" style="color: {{ color_title }};">
           {{ card_title }}
         </h3>
       </div>

@@ -26,14 +26,6 @@
   }
 {%- endstyle -%}
 
-{%- liquid
-  for block in section.blocks
-    if block.type == '@app'
-      assign has_app_block = true
-    endif
-  endfor
--%}
-
 <div class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   <header class="header header--middle-left page-width{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app {% endif %}">
     {%- if request.page_type == 'index' -%}
@@ -76,13 +68,6 @@
     <div class="header__icons">
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when '@app' -%}
-            {% render block %}
-        {%- endcase -%}
-      {%- endfor -%}
-
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
           {% if cart == empty %}
             <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
@@ -107,7 +92,6 @@
 {
   "name": "Header navigation",
   "class": "section-header",
-  "max_blocks": 3,
   "settings": [
     {
       "type": "header",
@@ -174,11 +158,6 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 20
-    }
-  ],
-  "blocks": [
-    {
-      "type": "@app"
     }
   ]
 }

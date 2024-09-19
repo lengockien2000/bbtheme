@@ -24,12 +24,6 @@
         "default": 100,
         "unit": "px",
         "label": "Desktop logo width"
-      },
-      {
-        "type": "image_picker",
-        "id": "favicon",
-        "label": "Favicon image",
-        "info": "Will be scaled down to 32 x 32px"
       }
     ]
   },
@@ -162,16 +156,6 @@
         "label": "Page width"
       },
       {
-        "type": "range",
-        "id": "spacing_sections",
-        "min": 0,
-        "max": 100,
-        "step": 4,
-        "unit": "px",
-        "label": "Space between template sections",
-        "default": 0
-      },
-      {
         "type": "header",
         "content": "Grid"
       },
@@ -192,7 +176,7 @@
       {
         "type": "range",
         "id": "spacing_grid_vertical",
-        "min": 4,
+        "min": 0,
         "max": 40,
         "step": 4,
         "default": 8,

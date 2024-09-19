@@ -567,10 +567,10 @@
               </select>
             {% endif %}
             <button
-              class="js-add-to-cart-custom quick-add-submit button button--full-width button--secondary"
+              class="js-add-to-cart-custom quick-add-submit button button--full-width button--secondary {{ settings.card_button_style }}"
               data-product-id="{{ card_product.id }}"
             >
-              ADD TO CART
+              Add to cart
             </button>
             <p class="js-cart-feedback" style="display: none; color: green;"></p>
           </quick-add-fast>
